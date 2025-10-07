@@ -1,0 +1,11 @@
+{% extends "@CorporateTemplate/base.html.twig" %}
+
+{% block content %}
+    {% if content.heroBlock %}
+        {{ sulu_get_block(content.heroBlock, content) }}
+    {% endif %}
+    
+    {% for block in content.blocks %}
+        {{ sulu_get_block(block, content) }}
+    {% endfor %}
+{% endblock %}
