@@ -1,0 +1,8 @@
+services:
+    CorporateTemplate\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Tests}'
+
+    CorporateTemplate\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
