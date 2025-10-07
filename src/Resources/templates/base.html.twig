@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ website_name|default('Corporate Site') }}{% endblock %}</title>
+    
+    {{ sulu_seo() }}
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body class="bg-white">
+    {% include "@CorporateTemplate/partials/header.html.twig" %}
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    {% include "@CorporateTemplate/partials/footer.html.twig" %}
+    
+    {% block javascripts %}{% endblock %}
+</body>
+</html>
