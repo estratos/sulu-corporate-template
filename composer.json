@@ -1,0 +1,48 @@
+{
+    "name": "estratos/sulu-corporate-template",
+    "type": "sulu-template-bundle",
+    "description": "Professional corporate template for Sulu CMS",
+    "keywords": ["sulu", "template", "corporate", "cms"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Estratos",
+            "email": "estratos@gmail.com."
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "sulu/sulu": "^2.4"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CorporateTemplate\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CorporateTemplate\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        },
+        "sulu-template": {
+            "mappings": {
+                "CorporateTemplate": ["%vendor.dir%/estratos/sulu-corporate-template/templates"]
+            }
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "CorporateTemplate\\ComposerScripts::postInstall"
+        ],
+        "post-update-cmd": [
+            "CorporateTemplate\\ComposerScripts::postUpdate"
+        ]
+    }
+}
